@@ -75,6 +75,7 @@ class _ContactsState extends State<Chats> {
             ),
           ))
       ),
+
     );
   }
 }

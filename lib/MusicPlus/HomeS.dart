@@ -102,8 +102,3 @@ class _HomeSState extends State<HomeS> {
     );
   }
 }
-
-void main() {
-  runApp(MaterialApp(home: HomeS(),debugShowCheckedModeBanner: false,)
-  );
-}
