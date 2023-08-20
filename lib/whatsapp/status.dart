@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class Status extends StatefulWidget {
   @override
   State<Status> createState() => _StatusState();
@@ -74,6 +74,33 @@ class _StatusState extends State<Status> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SizedBox(
+            height: 43,
+            width: 43,
+            child: FloatingActionButton(
+              onPressed: () {},
+              child: FaIcon(FontAwesomeIcons.pencil,color: Colors.teal,),
+              backgroundColor: Color.fromARGB(255, 136, 203, 197),
+              shape:
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              elevation: 50,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: FloatingActionButton(
+              onPressed: () {},
+              child: Icon(Icons.camera_alt,color: Colors.white,),
+              backgroundColor: Colors.teal,
+              shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            ),
+          ),
+        ],
       ),
     );
   }
