@@ -109,6 +109,25 @@ class Community extends StatelessWidget {
                     trailing: Text(time[index])),
               ),
             );
+          }else if(index == 2){
+            return Padding(
+              padding: const EdgeInsets.only(left: 15.0,top: 8),
+              child: ListTile(
+                title: Text(
+                  names[index],
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text(chat[index]),
+                trailing: Text(time[index]),
+                leading: CircleAvatar(
+                  backgroundColor: Colors.teal,
+                  child: Icon(
+                    pics[index],
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            );
           }else {
             return Padding(
               padding: const EdgeInsets.only(left: 15.0,top: 8),
