@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:myworkspace/HIveAdapter/database/hivedb.dart';
-
 import 'package:hive/hive.dart';
-
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:myworkspace/HIveAdapter/screens/home.dart';
 import 'package:myworkspace/HIveAdapter/screens/register_page.dart';
@@ -45,6 +45,7 @@ class Login_ extends StatelessWidget {
             ),
             ElevatedButton(onPressed: ()async{
               final users = await HiveDb.instance.getUser();
+              print(users);
               checkUserExist(users,context);
             },
                 child: Text("Login")),
@@ -71,18 +72,19 @@ class Login_ extends StatelessWidget {
       }
       });
     if(userFound == true){
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePa()));
+      Get.offAll(HomePa());
     }else{
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login Failed,user already exist")));
+      Get.snackbar("FAILED", "USER NOT EXIST");
     }
     }else{
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("fields must not be empty")));
+      Get.snackbar("ERROR", "USER NOT EXIST");
     }
   }
 }
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
   Hive.initFlutter();
+  Hive.registerAdapter(UserAdapter());
   Hive.openBox<User>('userdata');
-runApp(MaterialApp(home: Login_(),));
+runApp(GetMaterialApp(home: Login_(),));
 }

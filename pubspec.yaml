@@ -43,9 +43,30 @@ dependencies:
   get: ^4.6.6
   email_validator: ^2.1.17
 
+  # api integration using http
+  http: ^1.1.0
+  cached_network_image: ^3.3.0
+
+  # api integration using dio
+  dio: ^5.3.3
+  scrollable_positioned_list: ^0.3.8
+  internet_connection_checker: ^1.0.0+1
+  top_snackbar_flutter: ^3.1.0
+  #get:
+  #lottie:
+  #font_awesome_flutter:
+  # firebase
+  firebase_core: ^2.17.0
+  firebase_auth: ^4.10.1
+  firebase_storage: ^11.2.8
+  image_picker: ^1.0.4
+  path: ^1.8.3
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  permission_handler: ^11.0.1
+  provider: ^6.0.5
+  badges: ^3.1.2
 
 dev_dependencies:
   flutter_test:
